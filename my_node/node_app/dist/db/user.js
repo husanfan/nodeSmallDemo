@@ -1,4 +1,9 @@
-let user = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var user = {
     1: {
         name: "Bob",
         sex: 1
@@ -35,6 +40,6 @@ let user = {
         name: "小美",
         sex: 2
     }
-}
+};
 
-export default user
+exports.default = user;

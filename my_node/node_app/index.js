@@ -1,19 +1,17 @@
 import express from 'express';
 
-const app = express();
+import user from './db/user'
 
-const idList = {
-  1: "Bob",
-  2: "Cindy"
-};
+const app = express();
 
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  let results= idList[req.query.id]||"未查到";
+  let id = req.query.id;
+  let results = user[id] ? user[id].name : "未查到";
   res.send(results);
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(3000, () => {
+  console.log('node app listening on port 3000!')
 })
